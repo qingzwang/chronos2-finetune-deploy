@@ -1,0 +1,267 @@
+{
+  "config": {
+    "endpoint_name": "chronos2-finetuned-zendure",
+    "context_length": 336,
+    "prediction_length": 48,
+    "use_covariates": true,
+    "num_samples": 50,
+    "n_windows": 10,
+    "stride_days": 1,
+    "forecast_days": 1,
+    "batch_size": 8,
+    "quantile_levels": [
+      0.1,
+      0.5,
+      0.9
+    ],
+    "mae_total_windows": 488,
+    "latency_total_samples": 49
+  },
+  "mae": {
+    "num_windows": 488,
+    "overall_mae": 149.1782,
+    "std_mae": 134.2311,
+    "min_mae": 0.389,
+    "max_mae": 961.8117,
+    "median_mae": 115.2598,
+    "per_step_mae": [
+      95.2618,
+      120.0537,
+      125.9405,
+      125.8698,
+      137.3615,
+      143.459,
+      131.364,
+      131.9226,
+      140.7822,
+      148.5194,
+      139.3703,
+      140.1003,
+      152.9176,
+      134.8544,
+      167.2327,
+      176.9166,
+      177.6345,
+      169.4064,
+      181.1878,
+      175.1454,
+      171.1414,
+      155.5978,
+      175.3019,
+      170.7633,
+      144.784,
+      152.5954,
+      162.2551,
+      163.885,
+      181.0582,
+      184.6001,
+      166.2376,
+      166.2423,
+      159.0868,
+      147.2455,
+      168.0813,
+      136.9701,
+      125.7024,
+      126.0884,
+      147.9798,
+      122.4472,
+      119.7609,
+      119.7808,
+      136.2397,
+      139.1985,
+      135.107,
+      168.0771,
+      162.3314,
+      136.6942
+    ],
+    "total_inference_time_sec": 4.89,
+    "total_model_time_sec": 0,
+    "total_network_overhead_sec": 4.89
+  },
+  "latency": {
+    "single_sample": {
+      "count": 49,
+      "mean_ms": 37.27,
+      "std_ms": 0.77,
+      "min_ms": 36.05,
+      "p50_ms": 37.16,
+      "p90_ms": 37.96,
+      "p99_ms": 39.93,
+      "max_ms": 39.93
+    },
+    "batch": {
+      "4": {
+        "batch_size": 4,
+        "repeats": 5,
+        "mean_total_ms": 55.82,
+        "std_total_ms": 0.43,
+        "per_sample_ms": 13.95,
+        "throughput_samples_per_sec": 71.66
+      },
+      "8": {
+        "batch_size": 8,
+        "repeats": 5,
+        "mean_total_ms": 79.71,
+        "std_total_ms": 1.08,
+        "per_sample_ms": 9.96,
+        "throughput_samples_per_sec": 100.36
+      },
+      "16": {
+        "batch_size": 16,
+        "repeats": 5,
+        "mean_total_ms": 133.71,
+        "std_total_ms": 0.41,
+        "per_sample_ms": 8.36,
+        "throughput_samples_per_sec": 119.66
+      },
+      "32": {
+        "batch_size": 32,
+        "repeats": 5,
+        "mean_total_ms": 260.56,
+        "std_total_ms": 7.25,
+        "per_sample_ms": 8.14,
+        "throughput_samples_per_sec": 122.81
+      },
+      "64": {
+        "batch_size": 64,
+        "repeats": 5,
+        "mean_total_ms": 508.9,
+        "std_total_ms": 4.17,
+        "per_sample_ms": 7.95,
+        "throughput_samples_per_sec": 125.76
+      },
+      "128": {
+        "batch_size": 128,
+        "repeats": 5,
+        "mean_total_ms": 1046.36,
+        "std_total_ms": 19.69,
+        "per_sample_ms": 8.17,
+        "throughput_samples_per_sec": 122.33
+      }
+    },
+    "concurrent": {
+      "bs8_w1": {
+        "workers": 1,
+        "batch_size": 8,
+        "n_requests": 10,
+        "total_samples": 80,
+        "wall_time_sec": 0.841,
+        "throughput_samples_per_sec": 95.15,
+        "mean_request_ms": 80.24
+      },
+      "bs8_w2": {
+        "workers": 2,
+        "batch_size": 8,
+        "n_requests": 10,
+        "total_samples": 80,
+        "wall_time_sec": 0.743,
+        "throughput_samples_per_sec": 107.67,
+        "mean_request_ms": 137.15
+      },
+      "bs8_w4": {
+        "workers": 4,
+        "batch_size": 8,
+        "n_requests": 12,
+        "total_samples": 96,
+        "wall_time_sec": 0.904,
+        "throughput_samples_per_sec": 106.25,
+        "mean_request_ms": 258.14
+      },
+      "bs8_w8": {
+        "workers": 8,
+        "batch_size": 8,
+        "n_requests": 24,
+        "total_samples": 192,
+        "wall_time_sec": 1.785,
+        "throughput_samples_per_sec": 107.55,
+        "mean_request_ms": 500.83
+      },
+      "bs16_w1": {
+        "workers": 1,
+        "batch_size": 16,
+        "n_requests": 10,
+        "total_samples": 160,
+        "wall_time_sec": 1.415,
+        "throughput_samples_per_sec": 113.09,
+        "mean_request_ms": 134.05
+      },
+      "bs16_w2": {
+        "workers": 2,
+        "batch_size": 16,
+        "n_requests": 10,
+        "total_samples": 160,
+        "wall_time_sec": 1.289,
+        "throughput_samples_per_sec": 124.1,
+        "mean_request_ms": 236.13
+      },
+      "bs16_w4": {
+        "workers": 4,
+        "batch_size": 16,
+        "n_requests": 12,
+        "total_samples": 192,
+        "wall_time_sec": 1.552,
+        "throughput_samples_per_sec": 123.7,
+        "mean_request_ms": 441.94
+      },
+      "bs16_w8": {
+        "workers": 8,
+        "batch_size": 16,
+        "n_requests": 24,
+        "total_samples": 384,
+        "wall_time_sec": 3.095,
+        "throughput_samples_per_sec": 124.07,
+        "mean_request_ms": 865.46
+      },
+      "bs32_w1": {
+        "workers": 1,
+        "batch_size": 32,
+        "n_requests": 10,
+        "total_samples": 320,
+        "wall_time_sec": 2.77,
+        "throughput_samples_per_sec": 115.53,
+        "mean_request_ms": 262.14
+      },
+      "bs32_w2": {
+        "workers": 2,
+        "batch_size": 32,
+        "n_requests": 10,
+        "total_samples": 320,
+        "wall_time_sec": 2.502,
+        "throughput_samples_per_sec": 127.92,
+        "mean_request_ms": 458.33
+      },
+      "bs32_w4": {
+        "workers": 4,
+        "batch_size": 32,
+        "n_requests": 12,
+        "total_samples": 384,
+        "wall_time_sec": 3.028,
+        "throughput_samples_per_sec": 126.82,
+        "mean_request_ms": 859.4
+      },
+      "bs32_w8": {
+        "workers": 8,
+        "batch_size": 32,
+        "n_requests": 24,
+        "total_samples": 768,
+        "wall_time_sec": 5.983,
+        "throughput_samples_per_sec": 128.36,
+        "mean_request_ms": 1670.75
+      }
+    }
+  },
+  "cloudwatch_latency": {
+    "ModelLatency": {
+      "mean_ms": 402.94,
+      "min_ms": 26.09,
+      "max_ms": 1956.8,
+      "sample_count": 104
+    },
+    "OverheadLatency": {
+      "mean_ms": 5.56,
+      "min_ms": 3.1,
+      "max_ms": 36.72,
+      "sample_count": 104
+    }
+  }
+}

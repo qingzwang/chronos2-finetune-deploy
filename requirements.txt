@@ -1,0 +1,35 @@
+# Chronos-2 Fine-tune & Deploy Dependencies
+# Install: pip install -r requirements.txt
+# Python 3.12+
+
+# Chronos (install from source for training support)
+-e git+https://github.com/amazon-science/chronos-forecasting.git@1f099eb265a4b423529929321929d4258dc031d8#egg=chronos_forecasting
+
+# Core ML
+torch==2.9.1
+transformers==4.57.6
+accelerate==1.12.0
+safetensors==0.7.0
+einops==0.8.2
+tokenizers==0.22.2
+
+# Data & Scientific
+numpy==2.4.2
+pandas==3.0.0
+scikit-learn==1.8.0
+scipy==1.17.0
+
+# AWS / SageMaker
+boto3==1.42.63
+sagemaker==2.256.0
+
+# Config & Utils
+PyYAML==6.0.3
+omegaconf==2.3.0
+tqdm==4.67.3
+
+# Visualization
+matplotlib==3.10.8
+
+# Training utilities
+huggingface_hub==0.36.1

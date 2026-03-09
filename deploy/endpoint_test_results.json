@@ -1,0 +1,111 @@
+{
+  "config": {
+    "endpoint_name": "chronos2-finetuned-zendure",
+    "context_length": 336,
+    "prediction_length": 48,
+    "use_covariates": true,
+    "num_samples": 5000,
+    "n_windows": 10,
+    "stride_days": 1,
+    "forecast_days": 1,
+    "batch_size": 1,
+    "quantile_levels": [
+      0.1,
+      0.5,
+      0.9
+    ],
+    "mae_total_windows": 20310,
+    "latency_total_samples": 2050
+  },
+  "mae": {
+    "num_windows": 20310,
+    "overall_mae": 153.5303,
+    "std_mae": 201.532,
+    "min_mae": 0.0,
+    "max_mae": 3804.2043,
+    "median_mae": 90.0677,
+    "per_step_mae": [
+      97.2207,
+      119.8838,
+      132.1504,
+      137.5277,
+      141.9492,
+      144.6922,
+      140.6619,
+      138.6586,
+      139.298,
+      138.1705,
+      139.1348,
+      145.3733,
+      145.2425,
+      145.5757,
+      150.2619,
+      149.4319,
+      155.7957,
+      152.3383,
+      156.4891,
+      159.6841,
+      158.4647,
+      157.8089,
+      159.9245,
+      161.178,
+      162.9233,
+      165.9503,
+      162.1856,
+      160.1476,
+      162.4225,
+      165.6481,
+      163.2195,
+      163.2884,
+      163.7781,
+      161.6837,
+      165.3176,
+      162.7453,
+      162.7619,
+      164.1955,
+      165.4387,
+      165.6333,
+      163.3588,
+      161.6897,
+      161.8808,
+      160.2039,
+      158.9288,
+      161.1622,
+      161.8786,
+      156.0969
+    ],
+    "total_inference_time_sec": 751.77
+  },
+  "latency": {
+    "single_sample": {
+      "count": 2050,
+      "mean_ms": 36.7,
+      "std_ms": 2.28,
+      "min_ms": 35.18,
+      "p50_ms": 36.48,
+      "p90_ms": 37.56,
+      "p99_ms": 38.89,
+      "max_ms": 89.39
+    },
+    "batch": {
+      "10": {
+        "batch_size": 10,
+        "total_time_ms": 97.49,
+        "per_sample_ms": 9.75,
+        "throughput_samples_per_sec": 102.57
+      },
+      "50": {
+        "batch_size": 50,
+        "total_time_ms": 425.52,
+        "per_sample_ms": 8.51,
+        "throughput_samples_per_sec": 117.5
+      },
+      "100": {
+        "batch_size": 100,
+        "total_time_ms": 848.54,
+        "per_sample_ms": 8.49,
+        "throughput_samples_per_sec": 117.85
+      }
+    }
+  }
+}
